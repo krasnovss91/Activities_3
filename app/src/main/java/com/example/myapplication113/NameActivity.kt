@@ -22,7 +22,7 @@ class NameActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         val intent = Intent()
-        intent.putExtra("name", editText!!.text.toString())
+        intent.putExtra(KEY_NAME, editText!!.text.toString())
         setResult(RESULT_OK, intent)
         finish()
     }

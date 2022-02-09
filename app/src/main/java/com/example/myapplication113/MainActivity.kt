@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+const val KEY_NAME = "KEY_NAME"
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     var tvName: TextView? = null
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         if (data == null) {
             return
         }
-        val name = data.getStringExtra("name")
+        val name = data.getStringExtra(KEY_NAME)
         tvName!!.text = "$name"
     }
 }
