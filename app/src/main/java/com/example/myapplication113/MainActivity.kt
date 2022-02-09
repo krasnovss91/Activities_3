@@ -31,6 +31,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             return
         }
         val name = data.getStringExtra("name")
-        tvName!!.text = "Your name is $name"
+        tvName!!.text = "Информация о работе: $name"
     }
 }
