@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 
 const val KEY_NAME = "KEY_NAME"
 
@@ -19,6 +20,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         tvName = findViewById<View>(R.id.textView) as TextView
         btnName = findViewById<View>(R.id.button) as Button
         btnName!!.setOnClickListener(this)
+
+        val saveButton = findViewById<Button>(R.id.button4)
+
+        saveButton.setOnClickListener(object : View.OnClickListener {//собрать экземпляр класса-наследника Parcelable и сохранить его здесь
+            override fun onClick(v: View?) {
+
+            }
+        })
     }
 
     override fun onClick(v: View) {
@@ -34,4 +43,5 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val name = data.getStringExtra(KEY_NAME)
         tvName!!.text = "$name"
     }
+
 }
