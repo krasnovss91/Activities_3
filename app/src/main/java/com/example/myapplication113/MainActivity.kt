@@ -23,6 +23,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val saveButton = findViewById<Button>(R.id.button4)
 
+        val user = User()//соберём экземпляр пользователя - имя, фамилия и информация о работе
+
         saveButton.setOnClickListener(object : View.OnClickListener {//собрать экземпляр класса-наследника Parcelable и сохранить его здесь
             override fun onClick(v: View?) {
 
