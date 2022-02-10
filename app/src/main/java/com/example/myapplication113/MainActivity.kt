@@ -5,6 +5,7 @@ import android.os.Bundle
 
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -23,6 +24,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val saveButton = findViewById<Button>(R.id.button4)
 
+        val editText_1 = findViewById<EditText>(R.id.editTextTextPersonName2)
+        val editText_2 = findViewById<EditText>(R.id.editTextTextPersonName3)
+
         val user = User()//соберём экземпляр пользователя - имя, фамилия и информация о работе
 
         saveButton.setOnClickListener(object : View.OnClickListener {//собрать экземпляр класса-наследника Parcelable и сохранить его здесь
@@ -31,7 +35,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
     }
-
+//https://youtu.be/Q8ekjdRT85s
     override fun onClick(v: View) {
         val intent = Intent(this, NameActivity::class.java)
         startActivityForResult(intent, 1)
