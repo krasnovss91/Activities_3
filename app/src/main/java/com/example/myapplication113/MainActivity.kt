@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 
 const val KEY_NAME = "KEY_NAME"
+const val USER = "user"
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     var tvName: TextView? = null
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val firstName = findViewById<EditText>(R.id.editTextTextPersonName2)
         val lastName = findViewById<EditText>(R.id.editTextTextPersonName3)
 
-        val user = User(firstName,lastName,)//соберём экземпляр пользователя - имя, фамилия и информация о работе
+        val user = User(firstName.toString(), lastName, tvName)//соберём экземпляр пользователя - имя, фамилия и информация о работе
 
         saveButton.setOnClickListener(object : View.OnClickListener {//собрать экземпляр класса-наследника Parcelable и сохранить его здесь
             override fun onClick(v: View?) {
