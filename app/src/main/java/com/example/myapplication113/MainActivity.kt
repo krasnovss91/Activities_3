@@ -21,16 +21,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        tvName = findViewById<View>(R.id.textView) as TextView
-        btnName = findViewById<View>(R.id.button) as Button
+        //setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_main_l)
+      //  tvName = findViewById<View>(R.id.textView) as TextView
+        tvName = findViewById<View>(R.id.workInfo) as TextView
+        btnName = findViewById<View>(R.id.workInfoButton) as Button
         btnName!!.setOnClickListener(this)
         this.setTitle("UserActivityApp")
 
-        val saveButton = findViewById<Button>(R.id.button4)
+        val saveButton = findViewById<Button>(R.id.saveButton)
 
-        val firstName = findViewById<EditText>(R.id.editTextTextPersonName2)
-        val lastName = findViewById<EditText>(R.id.editTextTextPersonName3)
+        val firstName = findViewById<EditText>(R.id.firstName)
+        val lastName = findViewById<EditText>(R.id.lastName)
 
         val secondIntent = Intent(this, NameActivity::class.java)
 
