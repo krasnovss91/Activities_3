@@ -42,8 +42,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if(user.lastName.equals(null)) toast.show()
                 if(user.workInfo.equals(null)) toast.show()
 
-                secondIntent.putExtra(USER, user)//стартовать, только если нигде не null
-                startActivity(secondIntent)
+                user.lastName?.let {
+                    user.firstName?.let {
+                        user.workInfo?.let {
+                            secondIntent.putExtra(USER, user)//стартовать, только если нигде не null
+                            startActivity(secondIntent)
+                        }
+                    }
+                }
             }
         })
     }
