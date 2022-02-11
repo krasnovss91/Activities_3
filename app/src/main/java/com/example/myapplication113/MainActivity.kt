@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
         setContentView(R.layout.activity_main_l)
-      //  tvName = findViewById<View>(R.id.textView) as TextView
+        //  tvName = findViewById<View>(R.id.textView) as TextView
         tvName = findViewById<View>(R.id.workInfo) as TextView
         btnName = findViewById<View>(R.id.workInfoButton) as Button
         btnName!!.setOnClickListener(this)
@@ -48,17 +48,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if (user.lastName.equals(null)) toast.show()
                 if (user.workInfo.equals(null)) toast.show()
 
-                /* при нажатии на кнопку сохранить пропускать только если в объекте нет null
-                user.lastName?.let {
-                    user.firstName?.let {
-                        user.workInfo?.let {
-                            secondIntent.putExtra(USER, user)//стартовать, только если нигде не null
-                            startActivity(secondIntent)
-                        }
-                    }
+
+                if (user.firstName != null && user.lastName != null && user.workInfo != null) {
+                    secondIntent.putExtra(USER, user)//стартовать, только если нигде не null
+                    startActivity(secondIntent)
                 }
-                https://kotlinlang.ru/docs/null-safety.html
-                 */
             }
         })
     }
