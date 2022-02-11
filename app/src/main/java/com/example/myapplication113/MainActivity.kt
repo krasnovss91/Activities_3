@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 
@@ -34,6 +35,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         saveButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {//сделать проверку на null объекта user, в случае null выводить через toast
+
+                //toast.show()
+                val toast = Toast.makeText(applicationContext," Обнаружены пустые поля!", Toast.LENGTH_SHORT)
+
                 secondIntent.putExtra(USER, user)
                 startActivity(secondIntent)
             }
