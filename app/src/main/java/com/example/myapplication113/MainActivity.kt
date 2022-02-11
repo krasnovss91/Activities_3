@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 
 const val KEY_NAME = "KEY_NAME"
-const val USER = "user"
+const val USER = "KEY_USER"
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     var tvName: TextView? = null
@@ -28,17 +28,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val firstName = findViewById<EditText>(R.id.editTextTextPersonName2)
         val lastName = findViewById<EditText>(R.id.editTextTextPersonName3)
 
-        val secondIntent = Intent(this, NameActivity::class.java)//передадим экземпляр через этот intent
+        val secondIntent = Intent(this, NameActivity::class.java)
 
-        val user = User(firstName.toString(), lastName.toString(), tvName.toString())//соберём экземпляр пользователя - имя, фамилия и информация о работе
+        val user = User(firstName.toString(), lastName.toString(), tvName.toString())
 
-        saveButton.setOnClickListener(object : View.OnClickListener {//собрать экземпляр класса-наследника Parcelable и сохранить его здесь
+        saveButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {//сделать проверку на null объекта user, в случае null выводить через toast
-
+                secondIntent.putExtra(USER, user)
+                startActivity(secondIntent)
             }
         })
     }
-//https://youtu.be/Q8ekjdRT85s
+
     override fun onClick(v: View) {
         val intent = Intent(this, NameActivity::class.java)
         startActivityForResult(intent, 1)
