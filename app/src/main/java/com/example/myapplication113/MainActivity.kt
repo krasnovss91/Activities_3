@@ -33,11 +33,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val user = User(firstName.toString(), lastName.toString(), tvName.toString())
 
+        val toast = Toast.makeText(applicationContext," Обнаружены пустые поля!", Toast.LENGTH_SHORT)
+
         saveButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {//сделать проверку на null объекта user, в случае null выводить через toast
 
-                //toast.show()
-                val toast = Toast.makeText(applicationContext," Обнаружены пустые поля!", Toast.LENGTH_SHORT)
+                user.firstName?:toast.show()
+                user.lastName?:toast.show()
+                user.workInfo?:toast.show()
 
                 secondIntent.putExtra(USER, user)
                 startActivity(secondIntent)
