@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
                 if (user.firstName != null && user.lastName != null && user.workInfo != null) {
-                    secondIntent.putExtra(USER, user)//стартовать, только если нигде не null
+                    secondIntent.putExtra(USER, user)
                     startActivity(secondIntent)
                 }
             }
