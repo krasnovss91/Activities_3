@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 if (user.lastName.equals(null)) toast.show()
                 if (user.workInfo.equals(null)) toast.show()
 
+                /* при нажатии на кнопку сохранить пропускать только если в объекте нет null
                 user.lastName?.let {
                     user.firstName?.let {
                         user.workInfo?.let {
@@ -56,6 +57,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         }
                     }
                 }
+                https://kotlinlang.ru/docs/null-safety.html
+                 */
             }
         })
     }
