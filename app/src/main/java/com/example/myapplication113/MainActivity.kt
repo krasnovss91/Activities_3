@@ -17,12 +17,15 @@ const val USER = "KEY_USER"
 class MainActivity : AppCompatActivity(), View.OnClickListener {
     var tvName: TextView? = null
     var btnName: Button? = null
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         tvName = findViewById<View>(R.id.textView) as TextView
         btnName = findViewById<View>(R.id.button) as Button
         btnName!!.setOnClickListener(this)
+        this.setTitle("UserActivityApp")
 
         val saveButton = findViewById<Button>(R.id.button4)
 
@@ -33,14 +36,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val user = User(firstName.toString(), lastName.toString(), tvName.toString())
 
-        val toast = Toast.makeText(applicationContext," Обнаружены пустые поля!", Toast.LENGTH_SHORT)
+        val toast =
+            Toast.makeText(applicationContext, " Обнаружены пустые поля!", Toast.LENGTH_SHORT)
 
         saveButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
 
-                if(user.firstName.equals(null)) toast.show()
-                if(user.lastName.equals(null)) toast.show()
-                if(user.workInfo.equals(null)) toast.show()
+                if (user.firstName.equals(null)) toast.show()
+                if (user.lastName.equals(null)) toast.show()
+                if (user.workInfo.equals(null)) toast.show()
 
                 user.lastName?.let {
                     user.firstName?.let {
