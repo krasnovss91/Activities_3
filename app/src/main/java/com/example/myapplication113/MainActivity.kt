@@ -36,13 +36,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val toast = Toast.makeText(applicationContext," Обнаружены пустые поля!", Toast.LENGTH_SHORT)
 
         saveButton.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {//сделать проверку на null объекта user, в случае null выводить через toast
+            override fun onClick(v: View?) {
 
-                user.firstName?:toast.show()
-                user.lastName?:toast.show()
-                user.workInfo?:toast.show()
+                if(user.firstName.equals(null)) toast.show()
+                if(user.lastName.equals(null)) toast.show()
+                if(user.workInfo.equals(null)) toast.show()
 
-                secondIntent.putExtra(USER, user)
+                secondIntent.putExtra(USER, user)//стартовать, только если нигде не null
                 startActivity(secondIntent)
             }
         })
