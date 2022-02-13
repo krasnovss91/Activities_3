@@ -34,19 +34,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val firstName = findViewById<EditText>(R.id.firstName)
         val lastName = findViewById<EditText>(R.id.lastName)
 
-        val secondIntent = Intent(this, NameActivity::class.java)
+       // val secondIntent = Intent(this, NameActivity::class.java)
+        val secondIntent = Intent(this, UserActivity::class.java)//бросили данные в третью активити, поймать там
 
-        val user = User(firstName.toString(), lastName.toString(), tvName.toString())
+        val user = User(firstName.text.toString(), lastName.text.toString(), tvName.toString())
 
         val toast =
             Toast.makeText(applicationContext, " Обнаружены пустые поля!", Toast.LENGTH_SHORT)
 
-        saveButton.setOnClickListener(object : View.OnClickListener {
+        saveButton.setOnClickListener(object : View.OnClickListener {//складывать в третью activity
             override fun onClick(v: View?) {
 
-                if (user.firstName.equals(null)) toast.show()
-                if (user.lastName.equals(null)) toast.show()
-                if (user.workInfo.equals(null)) toast.show()
+                if (user.firstName.equals(null) || user.lastName.equals(null) || user.workInfo.equals(null)) toast.show()
+                //if (user.lastName.equals(null)) toast.show()
+                //if (user.workInfo.equals(null)) toast.show()
 
 
                 if (user.firstName != null && user.lastName != null && user.workInfo != null) {
