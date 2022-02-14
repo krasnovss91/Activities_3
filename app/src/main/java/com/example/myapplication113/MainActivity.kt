@@ -21,9 +21,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_main)
         setContentView(R.layout.activity_main_l)
-        //  tvName = findViewById<View>(R.id.textView) as TextView
+
         tvName = findViewById<View>(R.id.workInfo) as TextView
         btnName = findViewById<View>(R.id.workInfoButton) as Button
         btnName!!.setOnClickListener(this)
@@ -34,21 +33,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val firstName = findViewById<EditText>(R.id.firstName)
         val lastName = findViewById<EditText>(R.id.lastName)
 
-       // val secondIntent = Intent(this, NameActivity::class.java)
-        val secondIntent = Intent(this, UserActivity::class.java)//бросили данные в третью активити, поймать там
+        val secondIntent = Intent(this, UserActivity::class.java)
 
         val user = User(firstName.text.toString(), lastName.text.toString(), tvName.toString())
 
         val toast =
             Toast.makeText(applicationContext, " Обнаружены пустые поля!", Toast.LENGTH_SHORT)
 
-        saveButton.setOnClickListener(object : View.OnClickListener {//складывать в третью activity
+        saveButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
 
-                if (user.firstName.equals(null) || user.lastName.equals(null) || user.workInfo.equals(null)) toast.show()
-                //if (user.lastName.equals(null)) toast.show()
-                //if (user.workInfo.equals(null)) toast.show()
-
+                if (user.firstName.equals(null) || user.lastName.equals(null) || user.workInfo.equals(
+                        null
+                    )
+                ) toast.show()
 
                 if (user.firstName != null && user.lastName != null && user.workInfo != null) {
                     secondIntent.putExtra(USER, user)

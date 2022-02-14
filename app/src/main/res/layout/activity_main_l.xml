@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-<!-- сюда всё содержимое activity_main в порядке- имя, фамилия, данные о работе, кнопки ввести данные о работе и сохранить -->
     <EditText
         android:id="@+id/firstName"
         android:layout_width="wrap_content"
