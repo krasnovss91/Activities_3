@@ -67,7 +67,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             return
         }
         val name = data.getStringExtra(KEY_NAME)
-        tvName!!.text = "$name"
+        requireNotNull(tvName).text ="$name"
+
     }
 
 }
