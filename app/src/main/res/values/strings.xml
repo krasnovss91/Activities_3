@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">My Application113</string>
+    <string name="firstName">Имя</string>
+    <string name="lastName">Фамилия</string>
+    <string name="workInfo">Данные о работе</string>
+    <string name="workInfoButton">Ввести данные о работе</string>
+    <string name="saveButton">Сохранить</string>
 </resources>

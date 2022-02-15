@@ -11,7 +11,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Имя" />
+        android:text="@string/firstName" />
 
     <EditText
         android:id="@+id/lastName"
@@ -20,26 +20,26 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Фамилия" />
+        android:text="@string/lastName" />
 
     <TextView
         android:id="@+id/workInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Данные о работе" />
+        android:text="@string/workInfo" />
 
     <Button
         android:id="@+id/workInfoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Ввести данные о работе" />
+        android:text="@string/workInfoButton" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Сохранить" />
+        android:text="@string/saveButton" />
 </LinearLayout>
