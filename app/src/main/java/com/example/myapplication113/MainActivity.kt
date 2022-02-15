@@ -43,10 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         saveButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
 
-                if (user.firstName.equals(null) || user.lastName.equals(null) || user.workInfo.equals(
-                        null
-                    )
-                ) toast.show()
+                if (user.firstName.equals(null) || user.lastName.equals(null) || user.workInfo.equals(null)) toast.show()
 
                 if (user.firstName != null && user.lastName != null && user.workInfo != null) {
                     secondIntent.putExtra(USER, user)
