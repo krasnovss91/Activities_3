@@ -15,6 +15,8 @@ class NameActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_name)
+
+        this.setTitle("UserActivityApp")
         editText = findViewById<View>(R.id.editTextTextPersonName) as EditText
         button = findViewById<View>(R.id.button2) as Button
         button!!.setOnClickListener(this)

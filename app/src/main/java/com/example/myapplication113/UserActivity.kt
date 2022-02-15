@@ -11,6 +11,7 @@ class UserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user)
 
+        this.setTitle("UserActivityApp")
         val firstName = findViewById<TextView>(R.id.firstName1)
         val lastName = findViewById<TextView>(R.id.lastName1)
         val workInfo = findViewById<TextView>(R.id.workInfo1)
