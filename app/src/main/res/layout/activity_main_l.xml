@@ -11,7 +11,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/firstName" />
+        android:hint="@string/firstName" />
 
     <EditText
         android:id="@+id/lastName"
@@ -20,7 +20,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/lastName" />
+        android:hint="@string/lastName" />
 
     <TextView
         android:id="@+id/workInfo"
