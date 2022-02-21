@@ -18,15 +18,9 @@ class UserActivity : AppCompatActivity() {
 
         val data = intent.getParcelableExtra<User>(USER)
 
-        if (data != null) {
-            firstName.text = data.firstName
-        }
-        if (data != null) {
-            lastName.text = data.lastName
-        }
-        if (data != null) {
-            workInfo.text = data.workInfo
-        }
+        firstName.text = data?.firstName
+        lastName.text = data?.lastName
+        workInfo.text = data?.workInfo
 
     }
 }
